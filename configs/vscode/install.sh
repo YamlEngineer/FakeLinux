@@ -16,4 +16,5 @@ installExt PKief.material-icon-theme
 installExt redhat.vscode-yaml
 installExt zhuangtongfa.material-theme
 
+mkdir ~/.config/Code/User/
 cp ./configs/vscode/settings.json ~/.config/Code/User/
