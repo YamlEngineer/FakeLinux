@@ -6,7 +6,7 @@ chadwm (){
 }
 
 sddm (){
-   sudo cp ./configs/conf/sddm/amir.face.icon /usr/share/sddm/faces/
+   sudo cp ./configs/conf/sddm/fakesudo.face.icon /usr/share/sddm/faces/
    sudo cp ./configs/conf/sddm/default.conf /lib/sddm/sddm.conf.d/
    sudo cp ./configs/conf/sddm/theme.conf  /usr/share/sddm/themes/chili/
    sudo cp ./configs/conf/sddm/background.jpg  /usr/share/sddm/themes/chili/assets/
