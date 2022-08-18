@@ -48,13 +48,13 @@ user:
       shell: sudo cp ./configs/bin/* /usr/local/bin/
 
     - name: Copy sth config files
-      scripts: ./configs/conf/copy.sh
+      script: ./configs/conf/copy.sh
     
     - name: Install DevOps.nvim
       shell: "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && git clone https://github.com/FakeSudo/DevOps.nvim.git ~/.config/nvim/lua/custom"
     
     - name: Config VsCode
-      scripts: ./configs/vscode/install.sh
+      script: ./configs/vscode/install.sh
     
     - name: Config fish
       shell: cp -r ./configs/fish/ ~/.config/
@@ -100,7 +100,7 @@ user:
     - rxfetch
     - vlc
     - polkit-gnome
-    - pavcontrol
+    - pavucontrol
     - nautilus
     - lxappearance
     - gvfs-mtp
