@@ -1,0 +1,56 @@
+{
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "window.menuBarVisibility": "toggle",
+  "editor.fontFamily": "'Operator Mono'", //'JetBrainsMono Nerd Font'
+  "editor.fontSize": 15,
+  "editor.fontWeight": "normal",
+  "editor.inlayHints.fontFamily": "SF Pro Display",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "customizeUI.font.regular": "SF Pro Display",
+  "customizeUI.font.monospace": "SF Pro Display",
+  "customizeUI.activityBar": "top",
+  "terminal.integrated.fontWeight": "550",
+  "codesnap.containerPadding": "1em",
+  "codesnap.backgroundColor": "#abb8c3",
+  "codesnap.showWindowControls": true,
+  "codesnap.transparentBackground": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic
+          "comment",
+          "entity.name.type.class", //class names
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+          "keyword" //import, export, return…
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
+}

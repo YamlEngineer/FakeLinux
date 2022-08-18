@@ -2,16 +2,16 @@ root:
   username: fakesudo
   settings:
     ntp: True
-    hostname: archlinux
+    hostname: fakelinux
     locale: 
       - en_US.UTF-8 UTF-8
       - fa_IR UTF-8
     lang: en_US.UTF-8
     timezone: Asia/Tehran
-    shell: /bin/bash
+    shell: /usr/bin/fish
     drive:
       blk: /dev/sda
-      erase: false
+      erase: true
       partitions: # used fdisk conf
         - label: BOOT
           size: +512M
@@ -19,7 +19,7 @@ root:
           number: 1
         
         - label: ROOT 
-          size: +5G
+          size: +40G
           filesystem: linux
           number: 2
         
@@ -38,21 +38,136 @@ root:
     - grub
     - efibootmgr
     - networkmanager
+    - fish
   services:
     - NetworkManager
 
 user:
-  scripts:
-    - name: by file
-      script: ./configs/simple.sh
-    - name: inline shell
-      shell: echo FakeSudo
+  scripts: 
+    - name: Copy bin files
+      shell: sudo cp ./configs/bin/* /usr/local/bin/
 
+    - name: Copy sth config files
+      scripts: ./configs/conf/copy.sh
+    
+    - name: Install DevOps.nvim
+      shell: "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && git clone https://github.com/FakeSudo/DevOps.nvim.git ~/.config/nvim/lua/custom"
+    
+    - name: Config VsCode
+      scripts: ./configs/vscode/install.sh
+    
+    - name: Config fish
+      shell: cp -r ./configs/fish/ ~/.config/
+
+    - name: Config rofi
+      shell: cp -r ./configs/rofi/ ~/.config/
+
+    - name: Install fonts
+      shell: cp -r ./configs/fonts/ ~/.fonts
+    
+    - name: Config XDG
+      shell: "xdg-user-dirs-update && rm -rf ~/Desktop && xdg-user-dirs-update"
+
+    - name: Copy wallpapers
+      shell: cp -r ./configs/wallpapers ~/Pictures/.wallpapers
+
+    - name: set FakeLinux to realase name
+      shell: sudo sed -i 's/Arch Linux/Fake Linux/' /etc/os-release
+
+    - name: Install WM
+      shell: "cp -r ./configs/chadwm ~/.config/ && cd ~/.config/chadwm/chadwm/ && sudo make install clean"
+
+    - name: Install Terminal
+      shell: "git clone https://github.com/siduck/st ~/.config/st --depth 1 && cd ~/.config/st && sudo make install clean"
+  
   aurhelper: paru # or yay
   
   packages: # official & aur
-    - pyright
+    # DM & WM & Other
+    - xorg
+    - sddm
+    - sddm-kcm
+    - chili-sddm-theme
+    - maim
+    - imlib2
+    - gd
+    - reversal-icon-theme-git
+    - dracula-icons-git
+    - xclip
+    - xf86-video-ati
+    - xf86-video-amdgpu
+    - xf86-video-intel
+    - rxfetch
+    - vlc
+    - polkit-gnome
+    - pavcontrol
+    - nautilus
+    - lxappearance
+    - gvfs-mtp
+    - feh
+    - brave-bin
+    - anydesk-bin
+    - vazirmatn-fonts
+    - pamixer
+    - obs-studio
+    - zoom
+    - slack-desktop
+    - telegram-desktop
+    - pulseaudio
+    - discord
+    - rofi
+    - xdg-user-dirs
+    - wget
+    - virtualbox
+    - virtualbox-host-modules-arch
+    - unzip
+    - unrar
+    - windscribe-cli
+    - mpd
+    - mpc
+    - font-manager
+    
+    # Development Langs & DB & DevTools
+    - typescript
+    - go
+    - dash
+    - nodejs-lts-gallium
+    - deno
+    - php
+    - php-dblib
+    - php-pgsql
+    - php-sqlite
+    - nodejs-lts-gallium
+    - postgresql
+    - mariadb
+    - redis
+    - nmap
     - docker
-  
+    - docker-compose
+    - helm
+    - jq
+    - yq
+    - kubeadm
+    - kubectl
+    - kubectx
+    - kubelet
+    - mongodb-bin
+    - minikube
+    - minio-client
+    - mongocli-bin
+    - nginx
+    - ngrok
+    - neovim
+    - npm
+    - python-pip
+    - terraform
+    - visual-studio-code-bin
+    - yarn
+    - silicon
+    - helm
+
   services:
     - docker
+    - windscribe-cli
+    - sddm
+    - postgresql
