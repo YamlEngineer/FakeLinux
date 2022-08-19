@@ -165,6 +165,7 @@ user:
     - yarn
     - silicon
     - helm
+    - heroku-cli-bin
 
   services:
     - docker
