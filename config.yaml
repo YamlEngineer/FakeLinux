@@ -169,6 +169,6 @@ user:
 
   services:
     - docker
-    - windscribe-cli
+    - windscribe
     - sddm
     - postgresql
