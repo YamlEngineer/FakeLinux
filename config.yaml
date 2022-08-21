@@ -166,6 +166,7 @@ user:
     - silicon
     - helm
     - heroku-cli-bin
+    - postman-bin
 
   services:
     - docker
