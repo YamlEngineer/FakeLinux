@@ -10,11 +10,10 @@ installExt eamodio.gitlens
 installExt esbenp.prettier-vscode
 installExt iocave.customize-ui
 installExt iocave.monkey-patch
-installExt jripouteau.adonis-vscode-extension
 installExt mhutchie.git-graph
 installExt PKief.material-icon-theme
 installExt redhat.vscode-yaml
 installExt zhuangtongfa.material-theme
 
-mkdir ~/.config/Code/User/
+mkdir -p ~/.config/Code/User/
 cp ./configs/vscode/settings.json ~/.config/Code/User/
