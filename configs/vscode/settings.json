@@ -1,11 +1,11 @@
 {
-  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "material-icon-theme",
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "window.menuBarVisibility": "toggle",
-  "editor.fontFamily": "'Operator Mono'", //'JetBrainsMono Nerd Font'
-  "editor.fontSize": 15,
+  "editor.fontFamily": "'Operator Mono SSm Lig'", //'JetBrainsMono Nerd Font'
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
   "editor.fontWeight": "normal",
   "editor.inlayHints.fontFamily": "SF Pro Display",
   "[typescript]": {
@@ -15,7 +15,8 @@
   "customizeUI.font.regular": "SF Pro Display",
   "customizeUI.font.monospace": "SF Pro Display",
   "customizeUI.activityBar": "top",
-  "terminal.integrated.fontWeight": "550",
+  "terminal.integrated.fontWeight": "bold",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
   "codesnap.containerPadding": "1em",
   "codesnap.backgroundColor": "#abb8c3",
   "codesnap.showWindowControls": true,
@@ -52,5 +53,6 @@
         }
       }
     ]
-  }
+  },
+  "workbench.colorTheme": "One Dark Pro Darker"
 }

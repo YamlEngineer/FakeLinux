@@ -167,6 +167,8 @@ user:
     - helm
     - heroku-cli-bin
     - postman-bin
+    - libxcrypt
+    - libxcrypt-compat
 
   services:
     - docker
