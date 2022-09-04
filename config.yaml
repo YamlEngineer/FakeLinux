@@ -126,6 +126,8 @@ user:
     - mpd
     - mpc
     - font-manager
+    - spotify-adblock
+    - spotify
     
     # Development Langs & DB & DevTools
     - typescript
